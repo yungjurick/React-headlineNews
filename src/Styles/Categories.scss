@@ -1,0 +1,17 @@
+.Categories {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    .category-item {
+      display: inline-block;
+      margin-right: 0.5rem;
+      padding: 0.25rem;
+      background: rgb(225, 225, 225);
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      &:hover {
+        background: rgb(210, 210, 210);
+      }
+    }
+  }
