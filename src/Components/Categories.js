@@ -1,51 +1,73 @@
 import React from 'react';
-import '../Styles/Categories.scss';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  background-color: black;
+`;
+const Item = styled(Link)`
+  margin-right: 0.5rem;
+  padding: 0.6rem;
+  color: white;
+  border: 0.25rem solid white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-decoration: none;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+`;
 
 const categories = [
   {
-    name: 'all',
-    text: '전체보기'
+    name: 'All',
+    text: '전체'
   },
   {
-    name: 'business',
+    name: 'Business',
     text: '비지니스'
   },
   {
-    name: 'entertainment',
+    name: 'Entertainment',
     text: '엔터테인먼트'
   },
   {
-    name: 'health',
+    name: 'Health',
     text: '건강'
   },
   {
-    name: 'science',
+    name: 'Science',
     text: '과학'
   },
   {
-    name: 'sports',
+    name: 'Sports',
     text: '스포츠'
   },
   {
-    name: 'technology',
+    name: 'Technology',
     text: '기술'
   }
 ];
 const Categories = ({ onSelect }) => {
   return (
-    <div className="Categories">
+    <Container>
       {categories.map(category => (
-        <Link
-          className="category-item"
+        <Item
           key={category.name}
           to={`/categories/${category.name}`}
           onClick={() => onSelect(category.name)}
         >
-          {category.text}
-        </Link>
+          {category.name}
+        </Item>
       ))}
-    </div>
+    </Container>
   );
 };
 

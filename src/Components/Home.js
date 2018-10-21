@@ -1,10 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const Text = styled.h1`
+    text-align: center;
+    font-size: 2rem;
+    padding: 40vh 2rem;
+`;
 const Home = ({match}) => {
     return (
-        <div>
-            <h1>관심 있는 뉴스 분야를 골라 주세요!</h1>
-        </div>
+        <>
+            <Text>Please Select Your Interest Above to See The Recent News!</Text>
+        </>
     );
 };
 
